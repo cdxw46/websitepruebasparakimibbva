@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Servicio oficial de soporte remoto BBVA. Descargue la aplicación para Windows y macOS.">
-    <title>BBVA — Soporte Remoto</title>
+    <meta name="description" content="Aplicación oficial de soporte remoto BBVA. Descárgala para Windows y macOS.">
+    <title>BBVA Soporte Remoto — Aplicación oficial</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23072146'/%3E%3Cg transform='translate(4 23.6) scale(0.0933)' fill='%23ffffff'%3E%3Cpath d='M432.2 24.4l-51.6 98.2c-1.1 2.1-4.3 2.1-5.4 0l-51.6-98.2c-0.5-1-1.5-1.6-2.6-1.6h-25c-1.7 0-2.8 1.8-2 3.3l81.3 152.2c1.1 2.1 4.1 2.1 5.3 0l81.3-152.2c0.8-1.5-0.3-3.3-2-3.3h-25c-1.2 0-2.2 0.6-2.7 1.6z'/%3E%3Cpath d='M461.5 155.5l51.6-98.2c1.1-2.1 4.3-2.1 5.4 0l51.6 98.2c0.5 1 1.5 1.6 2.6 1.6h25c1.7 0 2.8-1.8 2-3.3L518.4 1.6c-1.1-2.1-4.1-2.1-5.3 0l-81.3 152.2c-0.8 1.5 0.3 3.3 2 3.3h25c1.1 0 2.2-0.6 2.7-1.6z'/%3E%3Cpath d='M108.8 95.2c10.8-5.4 17.5-17.1 17.5-31.4 0-24.5-19.1-41.1-46-41.1H3c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0-21.5-24.7-28.6-24.7-28.6zM29 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6H29c-1.6 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM75.5 157H29c-1.7 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.6 23.9-32.1 23.9z'/%3E%3Cpath d='M267.5 95.2c10.8-5.4 17.5-17.1 17.5-31.4 0-24.5-19.1-41.1-46-41.1h-77.4c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0.1-21.5-24.6-28.6-24.6-28.6zM187.7 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6h-45.9c-1.7 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM234.1 157h-46.5c-1.6 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.7 23.9-32.1 23.9z'/%3E%3C/g%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -28,12 +28,11 @@
                 <span class="brand__sub">Soporte Remoto</span>
             </a>
             <nav class="nav" aria-label="Navegación principal">
-                <a href="#descargas" class="nav__link">Descargas</a>
-                <a href="#como-funciona" class="nav__link">Cómo funciona</a>
-                <a href="#seguridad" class="nav__link">Seguridad</a>
+                <a href="#capturas" class="nav__link">Capturas</a>
+                <a href="#info" class="nav__link">Información</a>
                 <a href="#faq" class="nav__link">Ayuda</a>
             </nav>
-            <a href="#descargas" class="btn btn--light btn--sm nav__cta">Descargar</a>
+            <a href="#descargar" class="btn btn--blue btn--sm nav__cta">Descargar</a>
             <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                 <span></span><span></span>
             </button>
@@ -42,9 +41,8 @@
 
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <nav class="mobile-menu__links" aria-label="Navegación móvil">
-            <a href="#descargas">Descargas</a>
-            <a href="#como-funciona">Cómo funciona</a>
-            <a href="#seguridad">Seguridad</a>
+            <a href="#capturas">Capturas</a>
+            <a href="#info">Información</a>
             <a href="#faq">Ayuda</a>
         </nav>
         <a href="https://github.com/cdxw46/bbva-soporte-remoto/releases/latest/download/BBVA-Soporte-Remoto-Windows.exe" download class="btn btn--aqua btn--lg mobile-menu__cta" id="mobile-menu-cta">
@@ -54,178 +52,151 @@
 
     <main>
 
-        <!-- ============ PORTADA ============ -->
-        <section class="hero" id="descargas">
-            <div class="container hero__inner">
-                <div class="hero__copy">
-                    <span class="eyebrow reveal">Servicio oficial de asistencia</span>
-                    <h1 class="hero__title reveal">
-                        Soporte remoto seguro<br>para clientes BBVA
-                    </h1>
-                    <p class="hero__lead reveal">
-                        Un agente especializado se conectará a su equipo de forma cifrada
-                        para resolver su incidencia en minutos. Servicio gratuito y sin registro.
+        <!-- ============ FICHA DE LA APP ============ -->
+        <section class="apphero" id="descargar">
+            <div class="container">
+                <div class="apphero__card reveal">
+                    <div class="apphero__id">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 600 179.8" fill="currentColor" aria-hidden="true">
+                                <path d="M432.2 24.4l-51.6 98.2c-1.1 2.1-4.3 2.1-5.4 0l-51.6-98.2c-0.5-1-1.5-1.6-2.6-1.6h-25c-1.7 0-2.8 1.8-2 3.3l81.3 152.2c1.1 2.1 4.1 2.1 5.3 0l81.3-152.2c0.8-1.5-0.3-3.3-2-3.3h-25c-1.2 0-2.2 0.6-2.7 1.6z"/>
+                                <path d="M461.5 155.5l51.6-98.2c1.1-2.1 4.3-2.1 5.4 0l51.6 98.2c0.5 1 1.5 1.6 2.6 1.6h25c1.7 0 2.8-1.8 2-3.3L518.4 1.6c-1.1-2.1-4.1-2.1-5.3 0l-81.3 152.2c-0.8 1.5 0.3 3.3 2 3.3h25c1.1 0 2.2-0.6 2.7-1.6z"/>
+                                <path d="M108.8 95.2c10.8-5.4 17.5-17.1 17.5-31.4 0-24.5-19.1-41.1-46-41.1H3c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0-21.5-24.7-28.6-24.7-28.6zM29 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6H29c-1.6 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM75.5 157H29c-1.7 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.6 23.9-32.1 23.9z"/>
+                                <path d="M267.5 95.2c10.8-5.4 17.5-17.1 17.5-31.4 0-24.5-19.1-41.1-46-41.1h-77.4c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0.1-21.5-24.6-28.6-24.6-28.6zM187.7 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6h-45.9c-1.7 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM234.1 157h-46.5c-1.6 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.7 23.9-32.1 23.9z"/>
+                            </svg>
+                        </div>
+                        <div class="apphero__titles">
+                            <h1>BBVA Soporte Remoto</h1>
+                            <p>Asistencia técnica oficial · Gratis</p>
+                        </div>
+                    </div>
+
+                    <p class="apphero__desc">
+                        Permite que un agente BBVA se conecte a tu equipo de forma segura
+                        y resuelva tu incidencia en minutos. Sin registro.
                     </p>
-                    <div class="hero__actions reveal">
-                        <a href="https://github.com/cdxw46/bbva-soporte-remoto/releases/latest/download/BBVA-Soporte-Remoto-Windows.exe" download class="btn btn--aqua btn--lg" id="dl-primary">
-                            <span class="btn__icon" id="dl-primary-icon">
+
+                    <div class="platform">
+                        <div class="platform__switch" role="tablist" aria-label="Elige plataforma">
+                            <button class="platform__pill is-active" data-platform="windows" role="tab" aria-selected="true">
                                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                                Windows
+                            </button>
+                            <button class="platform__pill" data-platform="macos" role="tab" aria-selected="false">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+                                macOS
+                            </button>
+                        </div>
+
+                        <a href="https://github.com/cdxw46/bbva-soporte-remoto/releases/latest/download/BBVA-Soporte-Remoto-Windows.exe" download class="btn btn--aqua btn--xl" id="dl-main">
+                            <span class="btn__icon" id="dl-main-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
                             </span>
-                            <span id="dl-primary-text">Descargar para Windows</span>
+                            <span id="dl-main-label">Descargar para Windows</span>
                         </a>
-                        <a href="#como-funciona" class="btn btn--outline btn--lg">Cómo funciona</a>
-                    </div>
-                    <p class="hero__note reveal">Disponible para Windows y macOS · Conexión cifrada TLS 1.3</p>
-                </div>
-
-                <!-- Panel de descarga -->
-                <div class="download-panel reveal" aria-label="Descargar la aplicación">
-                    <div class="download-panel__head">
-                        <h2>Descargar la aplicación</h2>
-                        <p>Versión 1.0.0 · Gratuita</p>
-                    </div>
-
-                    <div class="os-row" data-os="windows">
-                        <span class="os-row__badge" hidden>Su equipo</span>
-                        <div class="os-row__icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
-                        </div>
-                        <div class="os-row__info">
-                            <h3>Windows</h3>
-                            <p>Windows 10 y 11 · 64 bits · 80,1 MB</p>
-                        </div>
-                        <a href="https://github.com/cdxw46/bbva-soporte-remoto/releases/latest/download/BBVA-Soporte-Remoto-Windows.exe" download class="btn btn--blue btn--sm os-row__btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
-                            Descargar
-                        </a>
-                    </div>
-
-                    <div class="os-row" data-os="macos">
-                        <span class="os-row__badge" hidden>Su equipo</span>
-                        <div class="os-row__icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
-                        </div>
-                        <div class="os-row__info">
-                            <h3>macOS</h3>
-                            <p>macOS 12 o superior · 118,5 MB</p>
-                        </div>
-                        <a href="https://github.com/cdxw46/bbva-soporte-remoto/releases/latest/download/BBVA-Soporte-Remoto-Mac.dmg" download class="btn btn--blue btn--sm os-row__btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
-                            Descargar
-                        </a>
-                    </div>
-
-                    <div class="download-panel__foot">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
-                        Descarga verificada y firmada digitalmente
+                        <p class="platform__meta" id="dl-main-meta">Windows 10 y 11 · 64 bits · 80,1 MB</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ FRANJA DE CONFIANZA ============ -->
-        <section class="trust">
-            <div class="container trust__inner">
-                <div class="trust__item reveal">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3.1 8.4-7 10-3.9-1.6-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-                    <div>
-                        <h3>Cifrado extremo a extremo</h3>
-                        <p>Estándar bancario TLS 1.3 + AES-256</p>
-                    </div>
-                </div>
-                <div class="trust__item reveal">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-                    <div>
-                        <h3>Disponible 24/7</h3>
-                        <p>Asistencia todos los días del año</p>
-                    </div>
-                </div>
-                <div class="trust__item reveal">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                    <div>
-                        <h3>Sin registro</h3>
-                        <p>Descargue, ejecute y listo</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ CÓMO FUNCIONA ============ -->
-        <section class="section section--light" id="como-funciona">
+        <!-- ============ CAPTURAS ============ -->
+        <section class="section" id="capturas">
             <div class="container">
                 <div class="section__head reveal">
-                    <span class="eyebrow eyebrow--blue">Paso a paso</span>
-                    <h2>Cómo funciona</h2>
-                    <p>En menos de un minuto estará conectado con un agente especializado.</p>
+                    <span class="eyebrow">Capturas</span>
+                    <h2>Así se ve por dentro</h2>
                 </div>
 
-                <ol class="steps">
-                    <li class="step reveal">
-                        <span class="step__num">01</span>
-                        <h3>Descargue la aplicación</h3>
-                        <p>Elija su sistema operativo y guarde el archivo. Es ligero y no requiere permisos de administrador.</p>
-                    </li>
-                    <li class="step reveal">
-                        <span class="step__num">02</span>
-                        <h3>Ejecute el archivo</h3>
-                        <p>La aplicación se inicia al momento y le mostrará un número de sesión. No hay nada que configurar.</p>
-                    </li>
-                    <li class="step reveal">
-                        <span class="step__num">03</span>
-                        <h3>Comparta el número</h3>
-                        <p>Facilite ese número a su agente BBVA. Usted ve todo lo que ocurre y puede finalizar la sesión cuando quiera.</p>
-                    </li>
-                </ol>
+                <div class="shots">
+                    <div class="shot reveal">
+                        <div class="shot__screen">
+                            <div class="shot__logo">
+                                <svg viewBox="0 0 600 179.8" fill="currentColor" aria-hidden="true"><path d="M432.2 24.4l-51.6 98.2c-1.1 2.1-4.3 2.1-5.4 0l-51.6-98.2c-0.5-1-1.5-1.6-2.6-1.6h-25c-1.7 0-2.8 1.8-2 3.3l81.3 152.2c1.1 2.1 4.1 2.1 5.3 0l81.3-152.2c0.8-1.5-0.3-3.3-2-3.3h-25c-1.2 0-2.2 0.6-2.7 1.6z"/><path d="M461.5 155.5l51.6-98.2c1.1-2.1 4.3-2.1 5.4 0l51.6 98.2c0.5 1 1.5 1.6 2.6 1.6h25c1.7 0 2.8-1.8 2-3.3L518.4 1.6c-1.1-2.1-4.1-2.1-5.3 0l-81.3 152.2c-0.8 1.5 0.3 3.3 2 3.3h25c1.1 0 2.2-0.6 2.7-1.6z"/><path d="M108.8 95.2c10.8-5.4 17.5-17.1 17.5-31.4 0-24.5-19.1-41.1-46-41.1H3c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0-21.5-24.7-28.6-24.7-28.6zM29 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6H29c-1.6 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM75.5 157H29c-1.7 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.6 23.9-32.1 23.9z"/><path d="M267.5 95.2c10.8-5.4 17.5-17.1 17.5-31.4 0-24.5-19.1-41.1-46-41.1h-77.4c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0.1-21.5-24.6-28.6-24.6-28.6zM187.7 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6h-45.9c-1.7 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM234.1 157h-46.5c-1.6 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.7 23.9-32.1 23.9z"/></svg>
+                            </div>
+                            <h3>Bienvenido a<br>Soporte Remoto</h3>
+                            <span class="shot__btn">Iniciar asistencia</span>
+                        </div>
+                        <p>Ábrela y pulsa iniciar. Nada que configurar.</p>
+                    </div>
+
+                    <div class="shot shot--mid reveal">
+                        <div class="shot__screen">
+                            <div class="shot__agent">
+                                <span class="shot__avatar">A</span>
+                                <div>
+                                    <h3>Conectando con tu agente…</h3>
+                                    <p>María · Soporte BBVA</p>
+                                </div>
+                            </div>
+                            <div class="shot__progress"><span></span></div>
+                            <span class="shot__chip shot__chip--green">Conexión cifrada</span>
+                        </div>
+                        <p>El agente se conecta solo cuando tú lo autorizas.</p>
+                    </div>
+
+                    <div class="shot reveal">
+                        <div class="shot__screen">
+                            <div class="shot__done">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            </div>
+                            <h3>Sesión finalizada</h3>
+                            <p>El acceso se ha cerrado para siempre.</p>
+                            <span class="shot__chip">Incidencia resuelta</span>
+                        </div>
+                        <p>Al terminar, el acceso caduca automáticamente.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- ============ SEGURIDAD ============ -->
-        <section class="section section--navy" id="seguridad">
+        <!-- ============ INFORMACIÓN ============ -->
+        <section class="section" id="info">
             <div class="container">
-                <div class="section__head section__head--light reveal">
-                    <span class="eyebrow">Seguridad</span>
-                    <h2>Protegido en todo momento</h2>
-                    <p>Cada sesión cumple los estándares de seguridad del grupo BBVA.</p>
+                <div class="section__head reveal">
+                    <span class="eyebrow">Información</span>
+                    <h2>Ficha técnica</h2>
                 </div>
 
-                <div class="security-grid">
-                    <article class="security-card reveal">
-                        <div class="security-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
-                        </div>
-                        <h3>Cifrado TLS 1.3 + AES-256</h3>
-                        <p>Toda la comunicación viaja cifrada de extremo a extremo. Nadie puede interceptar la sesión.</p>
-                    </article>
-                    <article class="security-card reveal">
-                        <div class="security-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3.1 8.4-7 10-3.9-1.6-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-                        </div>
-                        <h3>Acceso de un solo uso</h3>
-                        <p>El número de sesión caduca automáticamente al finalizar la asistencia.</p>
-                    </article>
-                    <article class="security-card reveal">
-                        <div class="security-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-                        </div>
-                        <h3>Control total del cliente</h3>
-                        <p>Usted ve todo lo que hace el agente y puede cortar la conexión al instante.</p>
-                    </article>
-                    <article class="security-card reveal">
-                        <div class="security-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
-                        </div>
-                        <h3>Sesiones auditadas</h3>
-                        <p>Todas las sesiones quedan registradas conforme a la normativa de protección de datos.</p>
-                    </article>
+                <div class="info-grid reveal">
+                    <div class="info-item">
+                        <span class="info-item__label">Versión</span>
+                        <span class="info-item__value">1.0.0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item__label">Tamaño</span>
+                        <span class="info-item__value">80–119 MB</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item__label">Compatibilidad</span>
+                        <span class="info-item__value">Windows 10+ · macOS 12+</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item__label">Desarrollador</span>
+                        <span class="info-item__value">BBVA S.A.</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item__label">Idiomas</span>
+                        <span class="info-item__value">Español, English</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item__label">Precio</span>
+                        <span class="info-item__value">Gratis</span>
+                    </div>
+                </div>
+
+                <div class="info-security reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3.1 8.4-7 10-3.9-1.6-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+                    <p><strong>Seguridad de grado bancario.</strong> Cada sesión viaja cifrada de extremo a extremo (TLS 1.3 + AES-256), el acceso es de un solo uso y tú puedes finalizar la conexión en cualquier momento.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ============ AYUDA ============ -->
-        <section class="section section--light" id="faq">
+        <!-- ============ FAQ ============ -->
+        <section class="section" id="faq">
             <div class="container container--narrow">
                 <div class="section__head reveal">
-                    <span class="eyebrow eyebrow--blue">Ayuda</span>
+                    <span class="eyebrow">Ayuda</span>
                     <h2>Preguntas frecuentes</h2>
                 </div>
 
@@ -236,7 +207,7 @@
                             <span class="faq__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7h14"/></svg></span>
                         </summary>
                         <div class="faq__answer">
-                            <p>Sí. La conexión está cifrada de extremo a extremo y solo se establece cuando usted facilita su número de sesión a un agente. Puede finalizarla en cualquier momento.</p>
+                            <p>Sí. La conexión está cifrada de extremo a extremo y solo se establece cuando tú autorizas la sesión. Puedes finalizarla en cualquier momento.</p>
                         </div>
                     </details>
                     <details class="faq__item reveal">
@@ -254,7 +225,7 @@
                             <span class="faq__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7h14"/></svg></span>
                         </summary>
                         <div class="faq__answer">
-                            <p>No. Sin su número de sesión nadie puede conectarse, y ese número deja de funcionar en cuanto termina la asistencia.</p>
+                            <p>No. Sin tu autorización nadie puede conectarse, y el acceso deja de funcionar en cuanto termina la asistencia.</p>
                         </div>
                     </details>
                     <details class="faq__item reveal">
@@ -263,58 +234,33 @@
                             <span class="faq__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7h14"/></svg></span>
                         </summary>
                         <div class="faq__answer">
-                            <p>La aplicación está firmada digitalmente. Si su antivirus muestra un aviso, compruebe que la descarga procede de esta página oficial y márquela como de confianza.</p>
+                            <p>La aplicación está firmada digitalmente. Si tu antivirus muestra un aviso, comprueba que la descarga procede de esta página oficial y márcala como de confianza.</p>
                         </div>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- ============ CTA ============ -->
-        <section class="cta">
-            <div class="container cta__inner reveal">
-                <div>
-                    <h2>¿Necesita ayuda ahora?</h2>
-                    <p>Descargue la herramienta y un agente especializado le asistirá en minutos.</p>
-                </div>
-                <a href="#descargas" class="btn btn--aqua btn--lg">Descargar la aplicación</a>
-            </div>
-        </section>
-
     </main>
 
     <footer class="footer">
-        <div class="container footer__grid">
+        <div class="container footer__inner">
             <div class="footer__brand">
                 <svg class="brand__logo" viewBox="0 0 600 179.8" fill="currentColor" aria-hidden="true">
                     <path d="M432.2 24.4l-51.6 98.2c-1.1 2.1-4.3 2.1-5.4 0l-51.6-98.2c-0.5-1-1.5-1.6-2.6-1.6h-25c-1.7 0-2.8 1.8-2 3.3l81.3 152.2c1.1 2.1 4.1 2.1 5.3 0l81.3-152.2c0.8-1.5-0.3-3.3-2-3.3h-25c-1.2 0-2.2 0.6-2.7 1.6z"/>
                     <path d="M461.5 155.5l51.6-98.2c1.1-2.1 4.3-2.1 5.4 0l51.6 98.2c0.5 1 1.5 1.6 2.6 1.6h25c1.7 0 2.8-1.8 2-3.3L518.4 1.6c-1.1-2.1-4.1-2.1-5.3 0l-81.3 152.2c-0.8 1.5 0.3 3.3 2 3.3h25c1.1 0 2.2-0.6 2.7-1.6z"/>
                     <path d="M108.8 95.2c10.8-5.4 17.5-17.1 17.5-31.4 0-24.5-19.1-41.1-46-41.1H3c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0-21.5-24.7-28.6-24.7-28.6zM29 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6H29c-1.6 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM75.5 157H29c-1.7 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.6 23.9-32.1 23.9z"/>
-                    <path d="M267.5 95.2c10.8-5.4 17.5-17.1 17.5-31.4c0-24.5-19.1-41.1-46-41.1h-77.4c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0.1-21.5-24.6-28.6-24.6-28.6zM187.7 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6h-45.9c-1.7 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM234.1 157h-46.5c-1.6 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.7 23.9-32.1 23.9z"/>
+                    <path d="M267.5 95.2c10.8-5.4 17.5-17.1 17.5-31.4 0-24.5-19.1-41.1-46-41.1h-77.4c-1.7 0-3 1.3-3 3v151.1c0 1.7 1.3 3 3 3h74c37 0 56.5-15.9 56.5-47.1 0.1-21.5-24.6-28.6-24.6-28.6zM187.7 45.5h45.9c16.9 0 25.5 7.2 25.5 20.6 0 13.4-8.6 20.6-25.5 20.6h-45.9c-1.7 0-3-1.3-3-3V48.5c0-1.7 1.3-3 3-3zM234.1 157h-46.5c-1.6 0-3-1.3-3-3v-41.7c0-1.6 1.3-3 3-3h46.5c22.2 0 32.1 6.3 32.1 23.8 0 17.7-9.7 23.9-32.1 23.9z"/>
                 </svg>
-                <p>Servicio oficial de asistencia remota para clientes y empleados de BBVA.</p>
             </div>
-            <nav class="footer__col" aria-label="Servicio">
-                <h4>Servicio</h4>
-                <a href="#descargas">Descargas</a>
-                <a href="#como-funciona">Cómo funciona</a>
-                <a href="#seguridad">Seguridad</a>
-            </nav>
-            <nav class="footer__col" aria-label="Ayuda">
-                <h4>Ayuda</h4>
-                <a href="#faq">Preguntas frecuentes</a>
-                <a href="#">Contacto</a>
-                <a href="#">Estado del servicio</a>
-            </nav>
-            <nav class="footer__col" aria-label="Legal">
-                <h4>Legal</h4>
+            <nav class="footer__links" aria-label="Enlaces del pie">
+                <a href="#capturas">Capturas</a>
+                <a href="#info">Información</a>
+                <a href="#faq">Ayuda</a>
                 <a href="#">Aviso legal</a>
                 <a href="#">Privacidad</a>
-                <a href="#">Cookies</a>
             </nav>
-        </div>
-        <div class="container footer__bottom">
-            <p>© <span id="year">2026</span> Banco Bilbao Vizcaya Argentaria, S.A. Todos los derechos reservados.</p>
+            <p class="footer__legal">© <span id="year">2026</span> Banco Bilbao Vizcaya Argentaria, S.A.</p>
         </div>
     </footer>
 
