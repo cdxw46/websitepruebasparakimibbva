@@ -17,6 +17,8 @@
         }
     };
 
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     /* ---------- Detección de sistema operativo ---------- */
     function detectOS() {
         if (/Mac/.test(navigator.platform) || /Mac OS/.test(navigator.userAgent)) return 'macos';
@@ -38,6 +40,13 @@
         document.getElementById('dl-secondary-text').textContent = FILES[other].label;
         document.getElementById('dl-secondary-icon').innerHTML = ICONS[other];
 
+        var mobileCta = document.getElementById('mobile-menu-cta');
+        var mobileCtaText = document.getElementById('mobile-menu-cta-text');
+        if (mobileCta && mobileCtaText) {
+            mobileCta.href = FILES[os].href;
+            mobileCtaText.textContent = FILES[os].label;
+        }
+
         var card = document.querySelector('.card[data-os="' + os + '"]');
         if (card) {
             var badge = card.querySelector('.card__badge');
@@ -45,7 +54,7 @@
         }
     }
 
-    /* ---------- Header con efecto al hacer scroll ---------- */
+    /* ---------- Header al hacer scroll ---------- */
     function initHeader() {
         var header = document.getElementById('header');
         var onScroll = function () {
@@ -55,10 +64,38 @@
         onScroll();
     }
 
+    /* ---------- Menú móvil ---------- */
+    function initMobileMenu() {
+        var burger = document.getElementById('burger');
+        var menu = document.getElementById('mobile-menu');
+        if (!burger || !menu) return;
+
+        function setOpen(open) {
+            burger.classList.toggle('open', open);
+            menu.classList.toggle('open', open);
+            document.body.classList.toggle('menu-open', open);
+            burger.setAttribute('aria-expanded', open);
+            burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+            menu.setAttribute('aria-hidden', !open);
+        }
+
+        burger.addEventListener('click', function () {
+            setOpen(!menu.classList.contains('open'));
+        });
+
+        menu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () { setOpen(false); });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setOpen(false);
+        });
+    }
+
     /* ---------- Luz que sigue al cursor ---------- */
     function initSpotlight() {
         if (window.matchMedia('(hover: none)').matches) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (reducedMotion) return;
 
         var spotlight = document.getElementById('spotlight');
         var raf = null;
@@ -73,11 +110,30 @@
         }, { passive: true });
     }
 
-    /* ---------- Partículas del hero ---------- */
+    /* ---------- Rotación del preview al hacer scroll ---------- */
+    function initPreviewScroll() {
+        var preview = document.getElementById('preview');
+        if (!preview || reducedMotion) return;
+
+        var raf = null;
+        function update() {
+            raf = null;
+            var rect = preview.getBoundingClientRect();
+            var vh = window.innerHeight;
+            // 1 cuando el preview entra por abajo, 0 cuando está centrado
+            var progress = Math.min(Math.max((rect.top - vh * 0.25) / (vh * 0.6), 0), 1);
+            preview.style.setProperty('--rx', (8 + progress * 16) + 'deg');
+        }
+        window.addEventListener('scroll', function () {
+            if (!raf) raf = requestAnimationFrame(update);
+        }, { passive: true });
+        update();
+    }
+
+    /* ---------- Partículas ---------- */
     function initParticles() {
         var canvas = document.getElementById('particles');
-        if (!canvas) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!canvas || reducedMotion) return;
 
         var ctx = canvas.getContext('2d');
         var particles = [];
@@ -93,15 +149,15 @@
             canvas.height = height * dpr;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-            var count = Math.min(Math.floor((width * height) / 16000), 90);
+            var count = Math.min(Math.floor((width * height) / 22000), 70);
             particles = [];
             for (var i = 0; i < count; i++) {
                 particles.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.35,
-                    vy: (Math.random() - 0.5) * 0.35,
-                    r: Math.random() * 1.6 + 0.6
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3,
+                    r: Math.random() * 1.5 + 0.5
                 });
             }
         }
@@ -122,7 +178,7 @@
 
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(45, 204, 205, 0.5)';
+                ctx.fillStyle = 'rgba(45, 204, 205, 0.45)';
                 ctx.fill();
 
                 for (var j = i + 1; j < particles.length; j++) {
@@ -135,7 +191,7 @@
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(q.x, q.y);
-                        ctx.strokeStyle = 'rgba(45, 204, 205, ' + (0.14 * (1 - dist / LINK_DIST)) + ')';
+                        ctx.strokeStyle = 'rgba(45, 204, 205, ' + (0.12 * (1 - dist / LINK_DIST)) + ')';
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
@@ -144,24 +200,9 @@
             requestAnimationFrame(tick);
         }
 
-        var observer = new IntersectionObserver(function (entries) {
-            var visible = entries[0].isIntersecting;
-            if (visible && !running) {
-                running = true;
-                tick();
-            } else if (!visible) {
-                running = false;
-            }
-        });
-        observer.observe(canvas);
-
         document.addEventListener('visibilitychange', function () {
-            if (document.hidden) {
-                running = false;
-            } else {
-                running = true;
-                tick();
-            }
+            running = !document.hidden;
+            if (running) tick();
         });
 
         window.addEventListener('resize', resize);
@@ -217,28 +258,6 @@
         counters.forEach(function (el) { observer.observe(el); });
     }
 
-    /* ---------- Efecto 3D en el mockup ---------- */
-    function initTilt() {
-        var wrapper = document.getElementById('tilt');
-        var card = document.getElementById('tilt-card');
-        if (!wrapper || !card) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        if (window.matchMedia('(hover: none)').matches) return;
-
-        var MAX = 7;
-
-        wrapper.addEventListener('mousemove', function (e) {
-            var rect = wrapper.getBoundingClientRect();
-            var x = (e.clientX - rect.left) / rect.width - 0.5;
-            var y = (e.clientY - rect.top) / rect.height - 0.5;
-            card.style.transform = 'rotateY(' + (x * MAX) + 'deg) rotateX(' + (-y * MAX) + 'deg)';
-        });
-
-        wrapper.addEventListener('mouseleave', function () {
-            card.style.transform = 'rotateY(0deg) rotateX(0deg)';
-        });
-    }
-
     /* ---------- FAQ: solo una abierta ---------- */
     function initFaq() {
         var items = document.querySelectorAll('.faq__item');
@@ -272,11 +291,12 @@
     document.addEventListener('DOMContentLoaded', function () {
         applyOSDetection();
         initHeader();
+        initMobileMenu();
         initSpotlight();
+        initPreviewScroll();
         initParticles();
         initReveal();
         initCounters();
-        initTilt();
         initFaq();
         initToTop();
         initYear();
