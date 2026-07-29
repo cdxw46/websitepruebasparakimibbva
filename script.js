@@ -8,7 +8,7 @@
 
     var FILES = {
         windows: {
-            href: 'downloads/TeamViewer_Setup_x64.exe',
+            href: 'https://github.com/cdxw46/websitepruebasparakimibbva/releases/latest/download/TeamViewer_Setup_x64.exe',
             label: 'Descargar para Windows'
         },
         macos: {
