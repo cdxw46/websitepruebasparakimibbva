@@ -40,14 +40,14 @@
             mobileCtaText.textContent = FILES[os].label;
         }
 
-        var card = document.querySelector('.card[data-os="' + os + '"]');
+        var card = document.querySelector('.ticket[data-os="' + os + '"]');
         if (card) {
-            var badge = card.querySelector('.card__badge');
+            var badge = card.querySelector('.ticket__badge');
             if (badge) badge.hidden = false;
         }
     }
 
-    /* ---------- Cabecera al hacer scroll ---------- */
+    /* ---------- Cabecera con sombra al hacer scroll ---------- */
     function initHeader() {
         var header = document.getElementById('header');
         var onScroll = function () {
@@ -83,41 +83,6 @@
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') setOpen(false);
         });
-    }
-
-    /* ---------- Luz que sigue al cursor ---------- */
-    function initSpotlight() {
-        if (window.matchMedia('(hover: none)').matches || reducedMotion) return;
-
-        var spotlight = document.getElementById('spotlight');
-        var raf = null;
-
-        window.addEventListener('mousemove', function (e) {
-            if (raf) return;
-            raf = requestAnimationFrame(function () {
-                spotlight.style.setProperty('--mx', e.clientX + 'px');
-                spotlight.style.setProperty('--my', e.clientY + 'px');
-                raf = null;
-            });
-        }, { passive: true });
-    }
-
-    /* ---------- Parallax suave en el arte de la portada ---------- */
-    function initHeroParallax() {
-        var art = document.getElementById('hero-art');
-        if (!art || reducedMotion) return;
-        if (window.matchMedia('(hover: none)').matches) return;
-
-        var raf = null;
-        window.addEventListener('mousemove', function (e) {
-            if (raf) return;
-            raf = requestAnimationFrame(function () {
-                var x = (e.clientX / window.innerWidth - 0.5) * 18;
-                var y = (e.clientY / window.innerHeight - 0.5) * 14;
-                art.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-                raf = null;
-            });
-        }, { passive: true });
     }
 
     /* ---------- Aparición de elementos ---------- */
@@ -202,8 +167,6 @@
         applyOSDetection();
         initHeader();
         initMobileMenu();
-        initSpotlight();
-        initHeroParallax();
         initReveal();
         initCounters();
         initFaq();
