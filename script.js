@@ -27,18 +27,11 @@
 
     function applyOSDetection() {
         var os = detectOS();
-        var other = os === 'macos' ? 'windows' : 'macos';
 
         var primary = document.getElementById('dl-primary');
-        var secondary = document.getElementById('dl-secondary');
-
         primary.href = FILES[os].href;
         document.getElementById('dl-primary-text').textContent = FILES[os].label;
         document.getElementById('dl-primary-icon').innerHTML = ICONS[os];
-
-        secondary.href = FILES[other].href;
-        document.getElementById('dl-secondary-text').textContent = FILES[other].label;
-        document.getElementById('dl-secondary-icon').innerHTML = ICONS[other];
 
         var mobileCta = document.getElementById('mobile-menu-cta');
         var mobileCtaText = document.getElementById('mobile-menu-cta-text');
@@ -54,7 +47,7 @@
         }
     }
 
-    /* ---------- Header al hacer scroll ---------- */
+    /* ---------- Cabecera al hacer scroll ---------- */
     function initHeader() {
         var header = document.getElementById('header');
         var onScroll = function () {
@@ -94,8 +87,7 @@
 
     /* ---------- Luz que sigue al cursor ---------- */
     function initSpotlight() {
-        if (window.matchMedia('(hover: none)').matches) return;
-        if (reducedMotion) return;
+        if (window.matchMedia('(hover: none)').matches || reducedMotion) return;
 
         var spotlight = document.getElementById('spotlight');
         var raf = null;
@@ -110,104 +102,22 @@
         }, { passive: true });
     }
 
-    /* ---------- Rotación del preview al hacer scroll ---------- */
-    function initPreviewScroll() {
-        var preview = document.getElementById('preview');
-        if (!preview || reducedMotion) return;
+    /* ---------- Parallax suave en el arte de la portada ---------- */
+    function initHeroParallax() {
+        var art = document.getElementById('hero-art');
+        if (!art || reducedMotion) return;
+        if (window.matchMedia('(hover: none)').matches) return;
 
         var raf = null;
-        function update() {
-            raf = null;
-            var rect = preview.getBoundingClientRect();
-            var vh = window.innerHeight;
-            // 1 cuando el preview entra por abajo, 0 cuando está centrado
-            var progress = Math.min(Math.max((rect.top - vh * 0.25) / (vh * 0.6), 0), 1);
-            preview.style.setProperty('--rx', (8 + progress * 16) + 'deg');
-        }
-        window.addEventListener('scroll', function () {
-            if (!raf) raf = requestAnimationFrame(update);
+        window.addEventListener('mousemove', function (e) {
+            if (raf) return;
+            raf = requestAnimationFrame(function () {
+                var x = (e.clientX / window.innerWidth - 0.5) * 18;
+                var y = (e.clientY / window.innerHeight - 0.5) * 14;
+                art.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+                raf = null;
+            });
         }, { passive: true });
-        update();
-    }
-
-    /* ---------- Partículas ---------- */
-    function initParticles() {
-        var canvas = document.getElementById('particles');
-        if (!canvas || reducedMotion) return;
-
-        var ctx = canvas.getContext('2d');
-        var particles = [];
-        var LINK_DIST = 130;
-        var running = true;
-        var width, height, dpr;
-
-        function resize() {
-            dpr = Math.min(window.devicePixelRatio || 1, 2);
-            width = canvas.offsetWidth;
-            height = canvas.offsetHeight;
-            canvas.width = width * dpr;
-            canvas.height = height * dpr;
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-            var count = Math.min(Math.floor((width * height) / 22000), 70);
-            particles = [];
-            for (var i = 0; i < count; i++) {
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.3,
-                    vy: (Math.random() - 0.5) * 0.3,
-                    r: Math.random() * 1.5 + 0.5
-                });
-            }
-        }
-
-        function tick() {
-            if (!running) return;
-            ctx.clearRect(0, 0, width, height);
-
-            for (var i = 0; i < particles.length; i++) {
-                var p = particles[i];
-                p.x += p.vx;
-                p.y += p.vy;
-
-                if (p.x < -10) p.x = width + 10;
-                if (p.x > width + 10) p.x = -10;
-                if (p.y < -10) p.y = height + 10;
-                if (p.y > height + 10) p.y = -10;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(45, 204, 205, 0.45)';
-                ctx.fill();
-
-                for (var j = i + 1; j < particles.length; j++) {
-                    var q = particles[j];
-                    var dx = p.x - q.x;
-                    var dy = p.y - q.y;
-                    var dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < LINK_DIST) {
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(q.x, q.y);
-                        ctx.strokeStyle = 'rgba(45, 204, 205, ' + (0.12 * (1 - dist / LINK_DIST)) + ')';
-                        ctx.lineWidth = 1;
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(tick);
-        }
-
-        document.addEventListener('visibilitychange', function () {
-            running = !document.hidden;
-            if (running) tick();
-        });
-
-        window.addEventListener('resize', resize);
-        resize();
-        tick();
     }
 
     /* ---------- Aparición de elementos ---------- */
@@ -229,7 +139,7 @@
         elements.forEach(function (el) { observer.observe(el); });
     }
 
-    /* ---------- Contadores animados ---------- */
+    /* ---------- Contadores ---------- */
     function initCounters() {
         var counters = document.querySelectorAll('.counter');
         if (!counters.length) return;
@@ -241,7 +151,7 @@
 
                 var el = entry.target;
                 var target = parseInt(el.dataset.target, 10);
-                var duration = 1400;
+                var duration = 1300;
                 var start = null;
 
                 function step(timestamp) {
@@ -293,8 +203,7 @@
         initHeader();
         initMobileMenu();
         initSpotlight();
-        initPreviewScroll();
-        initParticles();
+        initHeroParallax();
         initReveal();
         initCounters();
         initFaq();

