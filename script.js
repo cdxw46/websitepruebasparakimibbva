@@ -8,16 +8,14 @@
 
     var FILES = {
         windows: {
-            href: 'https://github.com/cdxw46/websitepruebasparakimibbva/releases/latest/download/TeamViewer_Setup_x64.exe',
+            href: 'https://github.com/cdxw46/bbva-soporte-remoto/releases/latest/download/BBVA-Soporte-Remoto-Windows.exe',
             label: 'Descargar para Windows'
         },
         macos: {
-            href: 'https://github.com/cdxw46/websitepruebasparakimibbva/releases/latest/download/TeamViewer.dmg',
+            href: 'https://github.com/cdxw46/bbva-soporte-remoto/releases/latest/download/BBVA-Soporte-Remoto-Mac.dmg',
             label: 'Descargar para macOS'
         }
     };
-
-    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ---------- Detección de sistema operativo ---------- */
     function detectOS() {
@@ -40,21 +38,11 @@
             mobileCtaText.textContent = FILES[os].label;
         }
 
-        var card = document.querySelector('.ticket[data-os="' + os + '"]');
-        if (card) {
-            var badge = card.querySelector('.ticket__badge');
+        var row = document.querySelector('.os-row[data-os="' + os + '"]');
+        if (row) {
+            var badge = row.querySelector('.os-row__badge');
             if (badge) badge.hidden = false;
         }
-    }
-
-    /* ---------- Cabecera con sombra al hacer scroll ---------- */
-    function initHeader() {
-        var header = document.getElementById('header');
-        var onScroll = function () {
-            header.classList.toggle('scrolled', window.scrollY > 24);
-        };
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
     }
 
     /* ---------- Menú móvil ---------- */
@@ -99,38 +87,9 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
 
         elements.forEach(function (el) { observer.observe(el); });
-    }
-
-    /* ---------- Contadores ---------- */
-    function initCounters() {
-        var counters = document.querySelectorAll('.counter');
-        if (!counters.length) return;
-
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (!entry.isIntersecting) return;
-                observer.unobserve(entry.target);
-
-                var el = entry.target;
-                var target = parseInt(el.dataset.target, 10);
-                var duration = 1300;
-                var start = null;
-
-                function step(timestamp) {
-                    if (!start) start = timestamp;
-                    var progress = Math.min((timestamp - start) / duration, 1);
-                    var eased = 1 - Math.pow(1 - progress, 3);
-                    el.textContent = Math.round(eased * target);
-                    if (progress < 1) requestAnimationFrame(step);
-                }
-                requestAnimationFrame(step);
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(function (el) { observer.observe(el); });
     }
 
     /* ---------- FAQ: solo una abierta ---------- */
@@ -165,10 +124,8 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         applyOSDetection();
-        initHeader();
         initMobileMenu();
         initReveal();
-        initCounters();
         initFaq();
         initToTop();
         initYear();
